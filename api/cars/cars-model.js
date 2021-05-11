@@ -13,4 +13,4 @@ const create = async (car) => {
   return getById(id);
 };
 
-exports.module = { getAll, getById, create };
+module.exports = { getAll, getById, create };
