@@ -60,4 +60,18 @@ const checkVinNumberUnique = async (req, res, next) => {
   }
 };
 
-module.exports = { checkCarId, checkCarPayload, checkVinNumberUnique, checkVinNumberValid };
+const errorHandler = (err, req, res, next /*eslint-disable-line */) => {
+  res.status(err.status || 500).json({
+    note: "Houston, We have a problem!",
+    message: err.message,
+    stack: err.stack,
+  });
+};
+
+module.exports = {
+  checkCarId,
+  checkCarPayload,
+  checkVinNumberUnique,
+  checkVinNumberValid,
+  errorHandler,
+};
