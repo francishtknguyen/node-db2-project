@@ -30,7 +30,7 @@ const checkCarPayload = async (req, res, next) => {
     req.body = bodyValidation;
     next();
   } catch (err) {
-    next({ status: 400, message: err.message });
+    next({ status: 400, message: `${err.path} is missing` });
   }
 };
 
