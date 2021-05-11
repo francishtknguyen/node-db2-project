@@ -18,6 +18,7 @@
     "express": "^4.17.1",
     "knex": "^0.21.17",
     "sqlite3": "^5.0.2",
+    "vin-validator": "^1.0.0",
     "yup": "^0.32.9"
   },
   "repository": {
