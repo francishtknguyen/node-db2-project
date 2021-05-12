@@ -16,12 +16,12 @@ const checkCarId = async (req, res, next) => {
 };
 
 const carSchema = yup.object({
-  vin: yup.string().required(),
-  make: yup.string().required(),
-  model: yup.string().required(),
-  mileage: yup.string().required(),
-  title: yup.string(),
-  transmission: yup.string(),
+  vin: yup.string().trim().required(),
+  make: yup.string().trim().required(),
+  model: yup.string().trim().required(),
+  mileage: yup.string().trim().required(),
+  title: yup.string().trim(),
+  transmission: yup.string().trim(),
 });
 
 const checkCarPayload = async (req, res, next) => {
