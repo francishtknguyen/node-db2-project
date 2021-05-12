@@ -1,7 +1,12 @@
-const express = require("express")
+const express = require("express");
+const carsRouter = require("../api/cars/cars-router");
+const { errorHandler } = require("../api/cars/cars-middleware");
 
-const server = express()
+const server = express();
 
-// DO YOUR MAGIC
+server.use(express.json());
 
-module.exports = server
+server.use("/api/cars", carsRouter);
+server.use("*", errorHandler);
+
+module.exports = server;
